@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<title>注册1</title>
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<link rel="stylesheet" href="css/cui.css" />
+	<link rel="stylesheet" href="css/lib.css" />
+	<link rel="stylesheet" href="css/style.css" />
+    <!--[if IE]>
+      <link rel="stylesheet" href="css/all-ie-only.css" />
+    <![endif]-->
+</head>
+<body>
+    
+    <!-- 头部 -->
+    <div id="hd" class="hd-1">
+        <div class="wp">
+            <div class="hd-top">
+                <a href="" class="logo"><img src="images/logo.png" alt=""></a>
+                <h3 class="title">会员中心</h3>
+                <a href="" class="a-reg">已有账号</a>
+            </div>
+
+        </div>
+    </div>
+    <!-- 头部   end -->
+
+
+    <!-- 主内容 -->
+    <div id="bd">
+        <div class="wp">
+
+            <ul class="ul-tab-1">
+                <li class="on"><span>用户注册</span>&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;</li>
+                <li>&gt;&gt;&gt;&gt;&gt;<span>设置密码</span>&gt;&gt;&gt;&gt;&gt;</li>
+                <li>&gt;&gt;&gt;&gt;&gt;&gt;&gt;<span>注册成功</span></li>
+            </ul>
+
+            <form action="">
+                <div class="m-reg1">
+                    <h3 class="tit">新用户注册</h3>
+                    <ul>
+                        <li>
+                            <input type="text" class="inp" placeholder="手机号码">
+                        </li>
+                        <li>
+                            验证
+                            <div id="drag" class="drag2"></div>
+                        </li>
+                        <li>
+                            <input type="text" class="inp inp1" placeholder="请输入手机验证码">
+                            <input type="button" id="btn-code1" value="获取验证码" />
+                        </li>
+                    </ul>
+                    <input type="submit" class="g-btn4" value="注册">
+                    <p class="p-info">
+                        <label>
+                            <input type="checkbox" class="sele" checked="checked">
+                            同意<a href="">翼农天下网注册条款</a>
+                        </label>
+                    </p>
+                </div>
+            </form>
+            
+        </div>
+    </div>
+    <!-- 主内容   end-->
+
+    <!-- 底部 -->
+    <div id="fd" class="fd-1">
+        <div class="wp">
+            <div class="m-link">
+                <a href="">关于翼农</a>
+                |
+                <a href="">联系我们</a>
+                |
+                <a href="">人才招聘</a>
+                |
+                <a href="">免责申明</a>
+                |
+                <a href="">平台风采</a>
+                |
+                <a href="">广告服务</a>
+                |
+                <a href="">友情链接</a>
+                |
+                <a href="">隐私申明</a>
+                |
+                <a href="">翼农社区</a>
+                |
+                <a href="">法律条款</a>
+            </div>
+
+            <div class="f-copy">
+                <p>
+                    <span class="s1">Copyright 版权所有© 翼农天下网</span>
+                    <span class="s2">备案号：沪ICP备1122258-01号</span>
+                    <span>技术支持：万脑科技</span>
+                </p>
+            </div>
+
+            <!-- 二维码 -->
+            <div class="f-ma">
+                <div class="pic">
+                    <img src="images/f-ma01.jpg" alt="">
+                    <p>微信公众号</p>
+                </div>
+                <div class="pic">
+                    <img src="images/f-ma01.jpg" alt="">
+                    <p>APP下载</p>
+                </div>
+            </div>
+            <!-- 二维码   end-->
+        </div>
+    </div>
+    <!-- 底部   end-->
+
+    <!-- 浮窗 -->
+    <div class="fix-float">
+        <a class="a-online" href=""><i></i>在线客服</a>
+        <a class="Btntop" href="javascript:voild(0);"></a>
+    </div>
+    <!-- 浮窗   end-->
+
+
+
+
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/lib.js"></script>
+
+    <link href="css/drag.css" rel="stylesheet" type="text/css"/>
+    <script type="text/javascript" src="js/drag.js"></script>
+    <script type="text/javascript">
+        $('#drag').drag();
+    </script>
+
+    <script type="text/javascript">  
+        var wait = 60;
+            function mbtime(o) {
+               if (wait == 60  ) {
+                  //ajax发送短信
+               }
+               if (wait == 0) {
+                  o.val('重发验证码').attr('disabled',false).removeClass('disabled');
+                  wait = 60;
+               } else {
+                  o.attr('disabled',true).val('剩余(' + wait + ")秒").addClass('disabled');
+                  wait--;
+                  setTimeout(function() {mbtime(o)},1000);
+               }
+            }
+            $('#btn-code1').click(function(event) {
+               mbtime( $(this) )
+               return false;
+            });
+    </script> 
+
+
+
+
+	
+</body>
+</html>
